@@ -34,6 +34,16 @@ public class MutabilityAssertTest {
     assertImmutable(mutableClass);
   }
   
+  @Test
+  public void whenAssertImmutableFailsReasonArePrintedWithAssertionFailure() throws Exception {
+    try {
+      assertImmutable(mutableClass);
+      fail("Assertion should have failed.");
+    }  catch (final AssertionError ae) {
+      asserEquals("", expectedError, ae.getMessage());
+    }
+  }
+  
   
   
   
