@@ -20,6 +20,8 @@ public class MutabilityAssertTest {
   private final Class<?> mutableClass = MutableByHavingPublicNonFinalField.class;
   
   private final String expectedError = String.format("%n" + 
+    "" +
+    "" +
     " None.");
   
   @Test
