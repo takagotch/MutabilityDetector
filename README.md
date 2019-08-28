@@ -34,6 +34,14 @@ public class MutabilityAssertTest {
   
   
   
+  
+  
+  @Test
+  public void canAllowInternalCachingWhichCausesUnobservableMutation() throws Exception {
+    assertInstancesOf(MutatesAsInternalCacing.class,
+      areImmutable(),
+      AllowedReason.assumingField("lengthWhenConcatenated").areModifiedAsPartOfAnUnbservableCachingStrategy());
+  }
 }
 ```
 
